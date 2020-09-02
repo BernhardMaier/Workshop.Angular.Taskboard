@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "taskboard"
+    }
+  },
+  "defaultProject": "taskboard",
+  "cli": {
+    "analytics": false
+  }
 }
