@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Task } from '../task';
 
 @Component({
   selector: 'tb-task-card',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-card.component.scss']
 })
 export class TaskCardComponent implements OnInit {
+  @Input() taskGuid: string;
+  task: Task;
 
   constructor() { }
 

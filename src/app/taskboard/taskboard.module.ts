@@ -12,6 +12,7 @@ import { TaskCardComponent } from './task-card/task-card.component';
 import { TaskCreateComponent } from './task-create/task-create.component';
 import { TaskboardComponent } from './taskboard.component';
 import { TaskboardRoutingModule } from './taskboard-routing.module';
+import { TaskDataService } from './task-data.service';
 
 
 
@@ -28,6 +29,7 @@ import { TaskboardRoutingModule } from './taskboard-routing.module';
     MatIconModule,
     MatInputModule,
     MatListModule
-  ]
+  ],
+  providers: [TaskDataService]
 })
 export class TaskboardModule { }

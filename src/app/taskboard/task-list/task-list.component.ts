@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Task } from '../task';
+import { State } from '../state';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'tb-task-list',
@@ -7,8 +9,10 @@ import { Task } from '../task';
   styleUrls: ['./task-list.component.scss']
 })
 export class TaskListComponent implements OnInit {
+  @Input() state: State;
+  @Input() tasks: Task[];
 
-  constructor(private tasks: Task[]) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
