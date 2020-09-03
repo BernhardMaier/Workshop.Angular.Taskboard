@@ -1,0 +1,20 @@
+.taskboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.createTask {
+  background-color: lightblue;
+}
+
+.taskboard_task-list_ToDo {
+  background-color: salmon;
+}
+
+.taskboard_task-list_Doing {
+  background-color: gold;
+}
+
+.taskboard_task-list_Done {
+  background-color: springgreen;
+}

@@ -1,7 +1,4 @@
-<mat-list>
-  <h3 matSubheader data-testid="task-list__heading">{{state}}</h3>
-  <mat-list-item *ngFor="let task of tasks" data-testid="task-list__task">
-    <h4>{{task.title}}</h4>
-    <p>{{task.text}}</p>
-  </mat-list-item>
+<h2 matSubheader data-testid="task-list__heading">{{state}}</h2>
+<mat-list class="task-list_mat-List" fxLayout="column" fxLayoutAlign="space-around center">
+    <tb-task-card *ngFor="let task of tasks" [taskGuid]=task.guid (refreshRequest)=catchRefreshRequest()></tb-task-card>
 </mat-list>

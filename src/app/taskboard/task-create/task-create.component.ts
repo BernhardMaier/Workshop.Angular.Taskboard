@@ -1,7 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TaskDataService } from '../task-data.service';
-import { newArray } from '@angular/compiler/src/util';
 import { newTask } from '../task';
 import { Subscription } from 'rxjs';
 
@@ -13,6 +12,7 @@ import { Subscription } from 'rxjs';
 export class TaskCreateComponent implements OnInit, OnDestroy {
   sink = new Subscription();
   form: FormGroup;
+  @Output() refreshRequest = new EventEmitter();
 
   constructor(private fb: FormBuilder, private taskboardService: TaskDataService) { }
 
@@ -30,5 +30,6 @@ export class TaskCreateComponent implements OnInit, OnDestroy {
   create(): void {
     const task = { ...newTask(), ...this.form.value };
     this.sink.add(this.taskboardService.createTask(task).subscribe());
+    this.refreshRequest.emit();
   }
 }

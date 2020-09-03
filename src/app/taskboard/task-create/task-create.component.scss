@@ -1,0 +1,14 @@
+button {
+  margin-left: 5px;
+}
+
+h2 {
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+
+:host {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  align-items: center;
+}

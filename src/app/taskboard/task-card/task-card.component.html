@@ -6,6 +6,18 @@
     {{task.text}}
   </mat-card-content>
   <mat-card-actions>
-
+    <button mat-button (click)=moveTaskBack()>
+      <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+    <button mat-button (click)=deleteTask()>
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button mat-button (click)=favorOrDisfavourTask()>
+      <mat-icon *ngIf="task.isFavorite">star</mat-icon>
+      <mat-icon *ngIf="!task.isFavorite">star_border</mat-icon>
+    </button>
+    <button mat-button (click)=moveTaskNext()>
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
   </mat-card-actions>
 </mat-card>

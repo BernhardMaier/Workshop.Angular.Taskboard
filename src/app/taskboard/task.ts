@@ -1,3 +1,5 @@
+import { newGuid } from 'ts-guid/dist';
+
 export interface Task {
   guid?: string;
   title: string;
@@ -9,11 +11,11 @@ export interface Task {
 
 export function newTask(): Task {
   return {
-    guid: '',
+    guid: newGuid(),
     title: '',
     text: '',
     isInProgress: false,
     isComplete: false,
     isFavorite: false
-  }
+  };
 }

@@ -11,7 +11,11 @@ import { Subscription } from 'rxjs';
 })
 export class TaskboardComponent implements OnInit, OnDestroy {
   sink = new Subscription();
-  tasks: Task[];
+
+  tasksToDo: Task[];
+  tasksDoing: Task[];
+  tasksDone: Task[];
+
   stateToDo: State = 'ToDo';
   stateDoing: State = 'Doing';
   stateDone: State = 'Done';
@@ -23,8 +27,19 @@ export class TaskboardComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.getTaskLists();
+  }
+
+
+  catchRefreshRequest(): void {
+    this.getTaskLists();
+  }
+
+  getTaskLists(): void {
     this.sink.add(this.taskDataService.getTasks().subscribe(tasks => {
-      this.tasks = tasks;
+      this.tasksToDo = tasks.filter(task => !task.isInProgress && !task.isComplete);
+      this.tasksDoing = tasks.filter(task => task.isInProgress);
+      this.tasksDone = tasks.filter(task => task.isComplete);
     }));
   }
 }

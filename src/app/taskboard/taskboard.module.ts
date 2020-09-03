@@ -13,6 +13,7 @@ import { TaskCreateComponent } from './task-create/task-create.component';
 import { TaskboardComponent } from './taskboard.component';
 import { TaskboardRoutingModule } from './taskboard-routing.module';
 import { TaskDataService } from './task-data.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -28,7 +29,8 @@ import { TaskDataService } from './task-data.service';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    FlexLayoutModule
   ],
   providers: [TaskDataService]
 })

@@ -1,4 +1,8 @@
-<tb-task-create></tb-task-create>
-<tb-task-list [state]=stateToDo [tasks]=tasks></tb-task-list>
-<tb-task-list [state]=stateDoing [tasks]=tasks></tb-task-list>
-<tb-task-list [state]=stateDone [tasks]=tasks></tb-task-list>
+<div class="createTask">
+  <tb-task-create (refreshRequest)=catchRefreshRequest()></tb-task-create>
+</div>
+<div class="taskboard">
+  <tb-task-list class="taskboard_task-list_ToDo" [state]=stateToDo [tasks]=tasksToDo (refreshRequest)=catchRefreshRequest()></tb-task-list>
+  <tb-task-list class="taskboard_task-list_Doing" [state]=stateDoing [tasks]=tasksDoing (refreshRequest)=catchRefreshRequest()></tb-task-list>
+  <tb-task-list class="taskboard_task-list_Done" [state]=stateDone [tasks]=tasksDone (refreshRequest)=catchRefreshRequest()></tb-task-list>
+</div>
