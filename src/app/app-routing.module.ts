@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'taskboard',
-    loadChildren: () => import('./taskboard/taskboard.module').then(m => m.TaskboardModule)
+    loadChildren: () => import('./taskboard/taskboard.module').then(m => m.TaskboardModule) // LazyLoading
   }
 ];
 
